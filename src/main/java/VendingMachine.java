@@ -89,7 +89,7 @@ public class VendingMachine {
         if(customer.getWalletAmount() >= itemPrice){
             Stock purchasedItem = this.slots.get(selectedSlot).remove(0);
             customer.getPurchasedSnacks().add(purchasedItem);
-            customer.payForItem(purchasedItem.getStockPrice());
+            customer.payForItem(purchasedItem);
         }
     }
 

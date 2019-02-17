@@ -17,4 +17,8 @@ public class Customer {
     public ArrayList<Stock> getPurchasedSnacks() {
         return this.purchasedSnacks;
     }
+
+    public void payForItem(Stock stock){
+       this.wallet -= stock.getStockPrice();
+    }
 }
