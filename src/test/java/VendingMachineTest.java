@@ -1,16 +1,29 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class VendingMachineTest{
 
     VendingMachine vendingMachine;
     Slot slot;
+    ArrayList<Stock> stockList;
+    Stock pretzels;
+    Stock twix;
+    Stock chips;
 
     @Before
     public void before(){
         vendingMachine = new VendingMachine();
+        stockList = new ArrayList<>();
+        pretzels = new Stock("pretzels", 0.50);
+        twix = new Stock("twix", 0.75);
+        chips = new Stock("chips", 0.85);
+        stockList.add(pretzels);
+        stockList.add(twix);
+        stockList.add(chips);
     }
 
     @Test
@@ -42,7 +55,14 @@ public class VendingMachineTest{
     }
     @Test
     public void stockListStartsEmpty(){
-        assertEquals(0, vendingMachine.getStockQuanity());
+        assertEquals(0, vendingMachine.getSlotStockQuantity(slot.A1));
+    }
+
+    @Test
+    public void canAddToVendingMachine(){
+        ArrayList returnedStock = vendingMachine.addToSlot(Slot.A1, stockList);
+        assertEquals(2, returnedStock.size());
+
     }
 
 

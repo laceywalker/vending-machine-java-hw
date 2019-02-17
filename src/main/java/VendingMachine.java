@@ -52,9 +52,26 @@ public class VendingMachine {
         return keyCount;
     }
 
-    public int getStockQuanity(){
-        return this.slots.get(Slot.A1).size();
+    public int getSlotStockQuantity(Slot slotToCheck){
+        return this.slots.get(slotToCheck).size();
     }
 
+
+    public ArrayList addToSlot(Slot slot, ArrayList<Stock> stockList){
+        ArrayList remainingStock = new ArrayList<Stock>();
+        int capacity = this.getSlotCapacity(slot.position);
+        int quantity = this.slots.get(slot).size();
+
+        for (Stock stock : stockList){
+            if (capacity > quantity) {
+                this.slots.get(slot).add(stock);
+                quantity += 1;
+            }
+            else{
+                remainingStock.add(stock);
+            }
+        }
+       return remainingStock;
+    }
 
 }

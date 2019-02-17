@@ -22,9 +22,12 @@ public class Vendor {
         this.stockList.remove(0);
     }
 
-//    public int insertStockIntoVendingMachine(){
-//        Stock stock = this.stockList.remove(0);
+    public ArrayList getVendorStock(){
+        return this.stockList;
+    }
 
-
+    public void insertStockIntoVendingMachine(Slot slot, ArrayList<Stock> stockList, VendingMachine vendingMachine){
+        vendingMachine.addToSlot(slot, stockList);
+    }
 
 }
