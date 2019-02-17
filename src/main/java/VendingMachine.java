@@ -46,7 +46,6 @@ public class VendingMachine {
 
     }
 
-
     public int getSlotCount(){
         int keyCount =  this.slots.keySet().size();
         return keyCount;
@@ -74,21 +73,18 @@ public class VendingMachine {
        return remainingStock;
     }
 
-    public double getItemPrice(Stock stock){
-           return stock.getStockPrice();
-    }
-
-
 
     public void vendToCustomer(Slot selectedSlot, Customer customer) {
         ArrayList<Stock> stock = this.slots.get(selectedSlot);
 
         if (stock.size() <= 0) {
             return;
-        } else {
+        }
+
+        else {
             Double itemPrice = stock.get(0).getStockPrice();
 
-            if (stock.size() > 0 && customer.getWalletAmount() >= itemPrice) {
+            if (customer.getWalletAmount() >= itemPrice) {
                 Stock purchasedItem = this.slots.get(selectedSlot).remove(0);
                 customer.getPurchasedSnacks().add(purchasedItem);
                 customer.payForItem(purchasedItem);

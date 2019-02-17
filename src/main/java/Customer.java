@@ -18,6 +18,10 @@ public class Customer {
         return this.purchasedSnacks;
     }
 
+    public int purchasedSnackListCount(){
+        return this.purchasedSnacks.size();
+    }
+
     public void payForItem(Stock stock){
        this.wallet -= stock.getStockPrice();
     }

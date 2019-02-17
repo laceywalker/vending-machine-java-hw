@@ -72,12 +72,10 @@ public class VendingMachineTest{
         vendingMachine.addToSlot(Slot.C1, stockList);
         vendingMachine.vendToCustomer(Slot.C1, customer);
         assertEquals(2, vendingMachine.getSlotStockQuantity(Slot.C1));
-
     }
 
     @Test
     public void cantBuyFromEmptySlot(){
-
         vendingMachine.vendToCustomer(Slot.C1, customer);
         assertEquals(4.50, customer.getWalletAmount(), 0.01);
     }
