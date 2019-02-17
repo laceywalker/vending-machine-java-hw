@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f26d160c-1137-4bcf-be55-c3cc0e2abf10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/VendingMachineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendingMachineTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11879" />
+          <entry key="java" value="12251" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11879" />
+          <entry key="JAVA" value="12251" />
         </counts>
       </usages-collector>
     </session>
@@ -55,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/VendingMachine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+            <state relative-caret-position="302">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
             </state>
           </provider>
         </entry>
@@ -64,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/VendingMachineTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+            <state relative-caret-position="335">
+              <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -404,15 +405,15 @@
         <option value="$PROJECT_DIR$/src/main/java/Slot.java" />
         <option value="$PROJECT_DIR$/src/test/java/VendorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vendor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VendingMachine.java" />
         <option value="$PROJECT_DIR$/src/main/java/Customer.java" />
         <option value="$PROJECT_DIR$/src/test/java/CustomerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/VendingMachineTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/VendingMachine.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="48" />
+    <option name="y" value="52" />
     <option name="width" value="1280" />
     <option name="height" value="705" />
   </component>
@@ -471,7 +472,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550424858494" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550425507270" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -537,12 +538,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VendingMachineTest - 2019.02.17 at 17h 05m 44s.xml">
-      <configuration name="VendingMachineTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendingMachineTest - 2019.02.17 at 17h 07m 09s.xml">
-      <configuration name="VendingMachineTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="VendingMachineTest - 2019.02.17 at 17h 12m 10s.xml">
       <configuration name="VendingMachineTest" configurationId="JUnit" />
     </history-entry>
@@ -566,6 +561,12 @@
     </history-entry>
     <history-entry file="CustomerTest - 2019.02.17 at 17h 24m 10s.xml">
       <configuration name="CustomerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VendingMachineTest - 2019.02.17 at 17h 33m 56s.xml">
+      <configuration name="VendingMachineTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VendingMachineTest - 2019.02.17 at 17h 34m 20s.xml">
+      <configuration name="VendingMachineTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -671,15 +672,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/VendingMachineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+        <state relative-caret-position="335">
+          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VendingMachine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+        <state relative-caret-position="302">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>

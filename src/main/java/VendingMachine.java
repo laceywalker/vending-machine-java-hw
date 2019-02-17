@@ -91,4 +91,14 @@ public class VendingMachine {
             }
         }
     }
+
+    public String checkSlotIsEmpty(Slot slotToCheck) {
+        ArrayList<Stock> stock = this.slots.get(slotToCheck);
+        if (stock.size() == 0) {
+            return "Sold Out!";
+        }
+        else {
+            return "Enjoy!";
+        }
+    }
 }

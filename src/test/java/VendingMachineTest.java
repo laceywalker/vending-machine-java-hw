@@ -89,6 +89,21 @@ public class VendingMachineTest{
         assertEquals(0, customer.getPurchasedSnacks().size());
     }
 
+    @Test
+    public void cantBuyIfSoldOut(){
+        vendingMachine.addToSlot(Slot.C1, stockList);
+        vendingMachine.vendToCustomer(Slot.C1, customer);
+        vendingMachine.vendToCustomer(Slot.C1, customer);
+        vendingMachine.vendToCustomer(Slot.C1, customer);
+        assertEquals("Sold Out!", vendingMachine.checkSlotIsEmpty(Slot.C1));
+
+    }
+
+    @Test
+    public void slotIsEmpty(){
+        vendingMachine.addToSlot(Slot.C1, stockList);
+        assertEquals("Enjoy!", vendingMachine.checkSlotIsEmpty(Slot.C1));
+    }
 
 
 
