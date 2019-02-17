@@ -25,6 +25,10 @@ public class VendingMachine {
         this.slots.put(Slot.E3, stock);
     }
 
+//    public String getSlotPosition(){
+//        return this.slots.get(Slot.name);
+//    }
+
     public int getSlotCount(){
         int keyCount =  this.slots.keySet().size();
         return keyCount;

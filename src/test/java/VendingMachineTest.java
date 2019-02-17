@@ -19,6 +19,16 @@ public class VendingMachineTest{
     }
 
     @Test
+    public void checkSlotPosition(){
+        assertEquals("A1", slot.A1.getPosition());
+    }
+
+    @Test
+    public void checkSlotCapacity(){
+        assertEquals(1, slot.A1.getCapacity());
+    }
+
+    @Test
     public void stockListStartsEmpty(){
         assertEquals(0, vendingMachine.getStockQuanity());
     }

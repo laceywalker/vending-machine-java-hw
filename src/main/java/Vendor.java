@@ -22,5 +22,9 @@ public class Vendor {
         this.stockList.remove(0);
     }
 
+//    public int insertStockIntoVendingMachine(){
+//        Stock stock = this.stockList.remove(0);
+
+
 
 }

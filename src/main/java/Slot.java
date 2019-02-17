@@ -16,8 +16,8 @@ public enum Slot {
     E2("E2", 5),
     E3("E3", 5);
 
-    final String position;
-    final int capacity;
+    public final String position;
+    public final int capacity;
 
      Slot(String position, int capacity){
         this.position = position;

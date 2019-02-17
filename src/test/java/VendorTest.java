@@ -6,12 +6,14 @@ import static org.junit.Assert.assertEquals;
 public class VendorTest {
     Vendor vendor;
     Stock pretzels;
+    VendingMachine vendingMachine;
 
 
     @Before
     public void before(){
         vendor = new Vendor();
         pretzels = new Stock("pretzels", 0.50);
+        vendingMachine = new VendingMachine();
     }
 
     @Test
@@ -32,4 +34,11 @@ public class VendorTest {
         assertEquals(0, vendor.getStockListCount());
 
     }
+
+//    @Test
+//    public void canAddStockToVendingMachine(){
+//        vendor.addToStockList(pretzels);
+//        vendor.insertStockIntoVendingMachine();
+//        assertEquals(1, vendingMachine.getStockQuanity());
+//    }
 }
