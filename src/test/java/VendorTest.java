@@ -44,11 +44,5 @@ public class VendorTest {
         assertEquals(pretzels, vendor.getVendorStock());
     }
 
-//    @Test
-//    public void canAddStockToVendingMachine(){
-//        vendor.addToStockList(pretzels);
-//        vendor.addToStockList(cattleFemur);
-//        vendor.insertStockIntoVendingMachine(slot.A1.position, vendor.getVendorStock(), vendingMachine);
-//        assertEquals(1, vendingMachine.getSlotStockQuantity(slot.A1));
-//    }
+
 }

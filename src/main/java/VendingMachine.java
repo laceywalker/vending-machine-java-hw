@@ -74,4 +74,23 @@ public class VendingMachine {
        return remainingStock;
     }
 
+    public double getItemPrice(Stock stock){
+           return stock.getStockPrice();
+    }
+
+
+
+    public void vendToCustomer(Slot selectedSlot, Customer customer){
+        ArrayList<Stock> stock = this.slots.get(selectedSlot);
+        Double itemPrice = stock.get(0).getStockPrice();
+
+//      ALL THE ITEMS IN THE ARRAY ARE THE SAME PRICE, EASIER TO RETURN AN ARRAY AND CHECK PRICE OF 1st ITEM
+
+        if(customer.getWalletAmount() >= itemPrice){
+            Stock purchasedItem = this.slots.get(selectedSlot).remove(0);
+            customer.getPurchasedSnacks().add(purchasedItem);
+            customer.payForItem(purchasedItem.getStockPrice());
+        }
+    }
+
 }

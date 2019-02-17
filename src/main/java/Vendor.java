@@ -26,8 +26,6 @@ public class Vendor {
         return this.stockList;
     }
 
-    public void insertStockIntoVendingMachine(Slot slot, ArrayList<Stock> stockList, VendingMachine vendingMachine){
-        vendingMachine.addToSlot(slot, stockList);
-    }
+
 
 }
