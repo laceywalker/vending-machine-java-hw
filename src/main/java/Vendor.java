@@ -5,7 +5,7 @@ public class Vendor {
 
     private ArrayList<Stock> stockList;
 
-    public Vendor(Slot slot){
+    public Vendor(){
         this.stockList = new ArrayList<>();
 
     }

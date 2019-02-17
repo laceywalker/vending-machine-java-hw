@@ -8,23 +8,31 @@ public class VendingMachine {
     public VendingMachine(){
         ArrayList<Stock> stock = new ArrayList<>();
         this.slots = new <Slot, ArrayList<Stock>> HashMap();
-        this.slots.put(Slot.ONE, stock);
-        this.slots.put(Slot.TWO, stock);
-        this.slots.put(Slot.THREE, stock);
-        this.slots.put(Slot.FOUR, stock);
-        this.slots.put(Slot.FIVE, stock);
-        this.slots.put(Slot.SIX, stock);
-        this.slots.put(Slot.SEVEN, stock);
-        this.slots.put(Slot.EIGHT, stock);
-        this.slots.put(Slot.NINE, stock);
-        this.slots.put(Slot.TEN, stock);
-        this.slots.put(Slot.ELEVEN, stock);
-        this.slots.put(Slot.TWELVE, stock);
-        this.slots.put(Slot.THIRTEEN, stock);
-        this.slots.put(Slot.FOURTEEN, stock);
-        this.slots.put(Slot.FIFTEEN, stock);
+        this.slots.put(Slot.A1, stock);
+        this.slots.put(Slot.A2, stock);
+        this.slots.put(Slot.A3, stock);
+        this.slots.put(Slot.B1, stock);
+        this.slots.put(Slot.B2, stock);
+        this.slots.put(Slot.B3, stock);
+        this.slots.put(Slot.C1, stock);
+        this.slots.put(Slot.C2, stock);
+        this.slots.put(Slot.C3, stock);
+        this.slots.put(Slot.D1, stock);
+        this.slots.put(Slot.D2, stock);
+        this.slots.put(Slot.D3, stock);
+        this.slots.put(Slot.E1, stock);
+        this.slots.put(Slot.E2, stock);
+        this.slots.put(Slot.E3, stock);
     }
 
+    public int getSlotCount(){
+        int keyCount =  this.slots.keySet().size();
+        return keyCount;
+    }
+
+    public int getStockQuanity(){
+        return this.slots.get(Slot.A1).size();
+    }
 
 
 }

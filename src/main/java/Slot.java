@@ -1,35 +1,35 @@
 public enum Slot {
 
-    ONE("A1", 1),
-    TWO("A", 2),
-    THREE("A", 3),
-    FOUR("B", 1),
-    FIVE("B", 2),
-    SIX("B", 3),
-    SEVEN("C", 1),
-    EIGHT("C", 2),
-    NINE("C", 3),
-    TEN("D", 1),
-    ELEVEN("D", 2),
-    TWELVE("D", 3),
-    THIRTEEN("E", 1),
-    FOURTEEN("E", 2),
-    FIFTEEN("E", 3);
+    A1("A1", 1),
+    A2("A2", 1),
+    A3("A3", 1),
+    B1("B1", 2),
+    B2("B2", 2),
+    B3("B3", 2),
+    C1("C1", 3),
+    C2("C2", 3),
+    C3("C3", 3),
+    D1("D1", 4),
+    D2("D2", 4),
+    D3("D3", 4),
+    E1("E1", 5),
+    E2("E2", 5),
+    E3("E3", 5);
 
-    final String row;
-    final int column;
+    final String position;
+    final int capacity;
 
-     Slot(String row, int column){
-        this.row = row;
-        this.column = column;
+     Slot(String position, int capacity){
+        this.position = position;
+        this.capacity = capacity;
     }
 
-    public String getRow(){
-         return this.row;
+    public String getPosition(){
+         return this.position;
     }
 
-    public int getColumn(){
-         return this.column;
+    public int getCapacity(){
+         return this.capacity;
     }
 }
 
