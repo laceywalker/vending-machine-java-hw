@@ -1,6 +1,6 @@
-public enum Slots {
+public enum Slot {
 
-    ONE("A", 1),
+    ONE("A1", 1),
     TWO("A", 2),
     THREE("A", 3),
     FOUR("B", 1),
@@ -16,11 +16,21 @@ public enum Slots {
     FOURTEEN("E", 2),
     FIFTEEN("E", 3);
 
-    private final String row;
-    private final int column;
+    final String row;
+    final int column;
 
-    Slots(String row, int column){
+     Slot(String row, int column){
         this.row = row;
         this.column = column;
     }
+
+    public String getRow(){
+         return this.row;
+    }
+
+    public int getColumn(){
+         return this.column;
+    }
 }
+
+

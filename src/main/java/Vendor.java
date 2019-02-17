@@ -5,8 +5,9 @@ public class Vendor {
 
     private ArrayList<Stock> stockList;
 
-    public Vendor(){
+    public Vendor(Slot slot){
         this.stockList = new ArrayList<>();
+
     }
 
     public int getStockListCount(){
