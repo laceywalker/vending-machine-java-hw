@@ -14,6 +14,7 @@ public class VendingMachineTest{
     Stock twix;
     Stock chips;
     Customer customer;
+    Customer customer2;
 
     @Before
     public void before(){
@@ -26,6 +27,7 @@ public class VendingMachineTest{
         stockList.add(twix);
         stockList.add(chips);
         customer = new Customer(4.50);
+        customer2 = new Customer(0.10);
     }
 
     @Test
@@ -78,6 +80,13 @@ public class VendingMachineTest{
     public void cantBuyFromEmptySlot(){
         vendingMachine.vendToCustomer(Slot.C1, customer);
         assertEquals(4.50, customer.getWalletAmount(), 0.01);
+    }
+
+    @Test
+    public void cantBuyInsufficientFunds(){
+        vendingMachine.addToSlot(Slot.C1, stockList);
+        vendingMachine.vendToCustomer(Slot.C1, customer2);
+        assertEquals(0, customer.getPurchasedSnacks().size());
     }
 
 
