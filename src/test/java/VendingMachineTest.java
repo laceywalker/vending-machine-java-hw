@@ -75,6 +75,13 @@ public class VendingMachineTest{
 
     }
 
+    @Test
+    public void cantBuyFromEmptySlot(){
+
+        vendingMachine.vendToCustomer(Slot.C1, customer);
+        assertEquals(4.50, customer.getWalletAmount(), 0.01);
+    }
+
 
 
 
