@@ -35,6 +35,17 @@ public class VendingMachine {
             return slotName;
     }
 
+    public int getSlotCapacity(String slotToCheck){
+        int slotCapacity = 0;
+        for (Slot key : this.slots.keySet()) {
+            if (key.position == slotToCheck) {
+                slotCapacity = key.capacity;
+            }
+        }
+        return slotCapacity;
+
+    }
+
 
     public int getSlotCount(){
         int keyCount =  this.slots.keySet().size();
