@@ -25,9 +25,16 @@ public class VendingMachine {
         this.slots.put(Slot.E3, stock);
     }
 
-//    public String getSlotPosition(){
-//        return this.slots.get(Slot.name);
-//    }
+    public String getSlotName(String slotNameToCheck) {
+        String slotName = new String();
+        for (Slot key : this.slots.keySet()) {
+            if (key.position == slotNameToCheck) {
+                slotName = key.position;
+            }
+        }
+            return slotName;
+    }
+
 
     public int getSlotCount(){
         int keyCount =  this.slots.keySet().size();

@@ -29,6 +29,11 @@ public class VendingMachineTest{
     }
 
     @Test
+    public void checkCanGetSlotName(){
+        String toCheck = vendingMachine.getSlotName("A1");
+        assertEquals("A1", toCheck);
+    }
+    @Test
     public void stockListStartsEmpty(){
         assertEquals(0, vendingMachine.getStockQuanity());
     }
