@@ -76,7 +76,7 @@ public class VendingMachine {
 
     public void vendToCustomer(Slot selectedSlot, Customer customer) {
         ArrayList<Stock> stock = this.slots.get(selectedSlot);
-        
+
 
         if (stock.size() <= 0) {
             return;

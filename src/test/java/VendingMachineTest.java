@@ -26,8 +26,8 @@ public class VendingMachineTest{
         stockList.add(pretzels);
         stockList.add(twix);
         stockList.add(chips);
-        customer = new Customer(4.50);
-        customer2 = new Customer(0.10);
+        customer = new Customer();
+        customer2 = new Customer();
     }
 
     @Test

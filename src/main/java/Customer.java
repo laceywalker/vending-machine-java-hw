@@ -2,16 +2,26 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    private double wallet;
+
+    private ArrayList<Coin> wallet;
     private ArrayList<Stock> purchasedSnacks;
 
-    public Customer(double wallet){
-        this.wallet = wallet;
+    public Customer(){
+        this.wallet = new ArrayList<>();
         this.purchasedSnacks = new ArrayList<>();
     }
 
+    public void addCoinToWallet(Coin coin){
+        this.wallet.add(coin);
+    }
+
     public double getWalletAmount(){
-        return this.wallet;
+        double walletTotal = 0;
+        for (Coin item : this.wallet) {
+            walletTotal += item.getValue();
+        }
+
+        return walletTotal;
     }
 
     public ArrayList<Stock> getPurchasedSnacks() {
@@ -23,6 +33,7 @@ public class Customer {
     }
 
     public void payForItem(Stock stock){
-       this.wallet -= stock.getStockPrice();
+        double walletTotal = getWalletAmount();
+        walletTotal -= stock.getStockPrice();
     }
 }
