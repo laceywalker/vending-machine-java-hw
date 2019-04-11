@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class VendingMachine {
@@ -77,7 +79,8 @@ public class VendingMachine {
     }
 
     public ArrayList<Coin> getChangeAvailable() {
-        return this.changeAvailable;
+        Collections.sort(changeAvailable, Collections.reverseOrder());
+        return changeAvailable;
     }
 
 
@@ -123,7 +126,33 @@ public class VendingMachine {
         return total;
     }
 
-    
+    public double getCoinsInsertedValue(ArrayList<Coin> coinsInserted){
+        double counter = 0;
+        for (Coin coin : coinsInserted){
+            counter += coin.getValue();
+        }
+        return counter;
+    }
+
+    public ArrayList<Coin> giveExactChange(Stock stock, ArrayList<Coin> coinsInserted){
+        ArrayList<Coin> coinsToReturn = new ArrayList<>();
+        double coinsInsertedValue = this.getCoinsInsertedValue(coinsInserted);
+        if(coinsInsertedValue < stock.getStockPrice()){
+            return coinsToReturn;
+        }
+        double stockPrice = stock.getStockPrice();
+        double change = coinsInsertedValue - stockPrice;
+        Collections.sort(this.changeAvailable, Collections.reverseOrder());
+        for(Coin coin: this.changeAvailable){
+            if(change >= coin.getValue()){
+                change -= coin.getValue();
+                coinsToReturn.add(coin);
+            }
+        }
+        return coinsToReturn;
+    }
+
+
 
 //    public ArrayList<Coin> giveExactChange(Stock stock, ArrayList<Coin> coinsInserted){
 //

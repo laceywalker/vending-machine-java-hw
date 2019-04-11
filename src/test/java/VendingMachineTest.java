@@ -17,6 +17,8 @@ public class VendingMachineTest{
     Customer customer2;
     Coin fiftyPence;
     Coin twentyPence;
+    Coin tenPence;
+    Coin fivePence;
 
     @Before
     public void before(){
@@ -32,6 +34,8 @@ public class VendingMachineTest{
         customer2 = new Customer();
         fiftyPence = new Coin("fifty pence", 0.50);
         twentyPence = new Coin("twenty pence", 0.20);
+        tenPence = new Coin("twenty pence", 0.10);
+        fivePence = new Coin("five pence", 0.05);
 
 
     }
@@ -133,11 +137,42 @@ public class VendingMachineTest{
     }
 
     @Test
+    public void canSortChang(){
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        vendingMachine.addCoinToVendingMachine(tenPence);
+        vendingMachine.addCoinToVendingMachine(fiftyPence);
+        vendingMachine.addCoinToVendingMachine(fiftyPence);
+        assertEquals(fiftyPence, vendingMachine.getChangeAvailable().get(0));
+        assertEquals(tenPence, vendingMachine.getChangeAvailable().get(vendingMachine.getChangeAvailable().size() -1));
+    }
+
+
+    @Test
     public void canCheckTotalofChangeinVendingMachine(){
         vendingMachine.addCoinToVendingMachine(fiftyPence);
         vendingMachine.addCoinToVendingMachine(fiftyPence);
         vendingMachine.addCoinToVendingMachine(twentyPence);
         assertEquals(1.20, vendingMachine.checkTotalChange(), 0.01);
+    }
+
+    @Test
+    public void canGiveCorrectChange(){
+        ArrayList<Coin> coinsInserted = new ArrayList<>();
+        coinsInserted.add(fiftyPence);
+        coinsInserted.add(fiftyPence);
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        vendingMachine.addCoinToVendingMachine(fivePence);
+        vendingMachine.addCoinToVendingMachine(fivePence);
+        vendingMachine.addCoinToVendingMachine(fivePence);
+        vendingMachine.addCoinToVendingMachine(tenPence);
+        ArrayList<Coin> change = vendingMachine.giveExactChange(pretzels, coinsInserted);
+        assertEquals(3, change.size());
+        assertEquals(0.2, change.get(0).getValue(), 0.1);
+        assertEquals(0.2, change.get(1).getValue(), 0.1);
+        assertEquals(0.1, change.get(2).getValue(), 0.1);
     }
 
 
