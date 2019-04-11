@@ -15,6 +15,8 @@ public class VendingMachineTest{
     Stock chips;
     Customer customer;
     Customer customer2;
+    Coin fiftyPence;
+    Coin twentyPence;
 
     @Before
     public void before(){
@@ -28,6 +30,10 @@ public class VendingMachineTest{
         stockList.add(chips);
         customer = new Customer();
         customer2 = new Customer();
+        fiftyPence = new Coin("fifty pence", 0.50);
+        twentyPence = new Coin("twenty pence", 0.20);
+
+
     }
 
     @Test
@@ -73,13 +79,15 @@ public class VendingMachineTest{
     public void customerCanBuyStock(){
         vendingMachine.addToSlot(Slot.C1, stockList);
         vendingMachine.vendToCustomer(Slot.C1, customer);
-        assertEquals(2, vendingMachine.getSlotStockQuantity(Slot.C1));
+        assertEquals(3, vendingMachine.getSlotStockQuantity(Slot.C1));
     }
 
     @Test
     public void cantBuyFromEmptySlot(){
+        vendingMachine.addToSlot(Slot.C1, stockList);
+        customer.addCoinToWallet(twentyPence);
         vendingMachine.vendToCustomer(Slot.C1, customer);
-        assertEquals(4.50, customer.getWalletAmount(), 0.01);
+        assertEquals(0.20, customer.getWalletAmount(), 0.01);
     }
 
     @Test
@@ -92,6 +100,19 @@ public class VendingMachineTest{
     @Test
     public void cantBuyIfSoldOut(){
         vendingMachine.addToSlot(Slot.C1, stockList);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
+        customer.addCoinToWallet(fiftyPence);
         vendingMachine.vendToCustomer(Slot.C1, customer);
         vendingMachine.vendToCustomer(Slot.C1, customer);
         vendingMachine.vendToCustomer(Slot.C1, customer);
@@ -103,6 +124,20 @@ public class VendingMachineTest{
     public void slotIsEmpty(){
         vendingMachine.addToSlot(Slot.C1, stockList);
         assertEquals("Enjoy!", vendingMachine.checkSlotIsEmpty(Slot.C1));
+    }
+
+    @Test
+    public void canAddCoinToVendingMachine(){
+        vendingMachine.addCoinToVendingMachine(fiftyPence);
+        assertEquals(1,vendingMachine.getChangeAvailable().size());
+    }
+
+    @Test
+    public void canCheckTotalofChangeinVendingMachine(){
+        vendingMachine.addCoinToVendingMachine(fiftyPence);
+        vendingMachine.addCoinToVendingMachine(fiftyPence);
+        vendingMachine.addCoinToVendingMachine(twentyPence);
+        assertEquals(1.20, vendingMachine.checkTotalChange(), 0.01);
     }
 
 

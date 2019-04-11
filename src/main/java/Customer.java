@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Customer {
@@ -36,4 +37,6 @@ public class Customer {
         double walletTotal = getWalletAmount();
         walletTotal -= stock.getStockPrice();
     }
+
+
 }

@@ -4,8 +4,11 @@ import java.util.HashMap;
 public class VendingMachine {
 
     private HashMap<Slot, ArrayList<Stock>> slots;
+    private ArrayList<Coin> changeAvailable;
 
     public VendingMachine(){
+        this.changeAvailable = new ArrayList<>();
+
         ArrayList<Stock> stock = new ArrayList<>();
         this.slots = new <Slot, ArrayList<Stock>> HashMap();
         this.slots.put(Slot.A1, stock);
@@ -73,6 +76,14 @@ public class VendingMachine {
        return remainingStock;
     }
 
+    public ArrayList<Coin> getChangeAvailable() {
+        return this.changeAvailable;
+    }
+
+
+    public void addCoinToVendingMachine(Coin coin) {
+        changeAvailable.add(coin);
+    }
 
     public void vendToCustomer(Slot selectedSlot, Customer customer) {
         ArrayList<Stock> stock = this.slots.get(selectedSlot);
@@ -94,9 +105,6 @@ public class VendingMachine {
     }
 
 
-
-
-
     public String checkSlotIsEmpty(Slot slotToCheck) {
         ArrayList<Stock> stock = this.slots.get(slotToCheck);
         if (stock.size() == 0) {
@@ -106,4 +114,47 @@ public class VendingMachine {
             return "Enjoy!";
         }
     }
+
+    public double checkTotalChange(){
+        double total = 0;
+        for (Coin coin : this.changeAvailable){
+            total += coin.getValue();
+        }
+        return total;
+    }
+
+    
+
+//    public ArrayList<Coin> giveExactChange(Stock stock, ArrayList<Coin> coinsInserted){
+//
+//
+//        for (Coin coin : coinsInserted){
+//            if (coin.getValue() > stock.getStockPrice()){
+//                return getWalletAmount();
+//            }
+//            else{
+//                returnedChange.add(coin);
+//            }
+//        }
+//
+////            return exact change when wallet contains coin matching price //
+//
+//        if (coin.getValue() == stock.getStockPrice()){
+//            this.wallet.remove(coin);
+//            return getWalletAmount();
+//        }
+//
+////        return exact change when combination of coins are used //
+//
+//        else{
+//            for (coin : this.wallet){
+//                if (stock.getStockPrice() > getWalletAmount()){
+//                    this.wallet.remove(coin)
+//                }
+//            }
+//
+//        }
+//    }
+//}
+
 }
