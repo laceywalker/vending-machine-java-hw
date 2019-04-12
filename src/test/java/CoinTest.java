@@ -1,11 +1,13 @@
 import org.junit.Before;
 import org.junit.Test;
 
+
 import static org.junit.Assert.assertEquals;
 
 public class CoinTest {
 
     Coin coin;
+    Coin fiftyPence;
 
     @Before
     public void before(){
@@ -21,5 +23,12 @@ public class CoinTest {
     public void coinHasValue(){
         assertEquals(0.01, coin.getValue(), 0.01);
     }
+
+//    @Test
+//    public void canCompareCoinValues(){
+//        int result = coin.compareTo(fiftyPence);
+//        System.out.print(result);
+////        assertEquals(-1, result);
+//    }
 
 }

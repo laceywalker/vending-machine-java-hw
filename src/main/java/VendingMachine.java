@@ -79,6 +79,8 @@ public class VendingMachine {
     }
 
     public ArrayList<Coin> getChangeAvailable() {
+//        collections calls the comparable method in the coin class, sorts the array of coins in reverse order from
+//        highest to lowest
         Collections.sort(changeAvailable, Collections.reverseOrder());
         return changeAvailable;
     }
@@ -137,11 +139,13 @@ public class VendingMachine {
     public ArrayList<Coin> giveExactChange(Stock stock, ArrayList<Coin> coinsInserted){
         ArrayList<Coin> coinsToReturn = new ArrayList<>();
         double coinsInsertedValue = this.getCoinsInsertedValue(coinsInserted);
+
         if(coinsInsertedValue < stock.getStockPrice()){
-            return coinsToReturn;
+            return coinsInserted;
         }
         double stockPrice = stock.getStockPrice();
         double change = coinsInsertedValue - stockPrice;
+
         Collections.sort(this.changeAvailable, Collections.reverseOrder());
         for(Coin coin: this.changeAvailable){
             if(change >= coin.getValue()){
@@ -152,38 +156,5 @@ public class VendingMachine {
         return coinsToReturn;
     }
 
-
-
-//    public ArrayList<Coin> giveExactChange(Stock stock, ArrayList<Coin> coinsInserted){
-//
-//
-//        for (Coin coin : coinsInserted){
-//            if (coin.getValue() > stock.getStockPrice()){
-//                return getWalletAmount();
-//            }
-//            else{
-//                returnedChange.add(coin);
-//            }
-//        }
-//
-////            return exact change when wallet contains coin matching price //
-//
-//        if (coin.getValue() == stock.getStockPrice()){
-//            this.wallet.remove(coin);
-//            return getWalletAmount();
-//        }
-//
-////        return exact change when combination of coins are used //
-//
-//        else{
-//            for (coin : this.wallet){
-//                if (stock.getStockPrice() > getWalletAmount()){
-//                    this.wallet.remove(coin)
-//                }
-//            }
-//
-//        }
-//    }
-//}
 
 }

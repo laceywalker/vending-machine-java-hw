@@ -21,7 +21,7 @@ public class VendorTest {
 
     @Test
     public void canCheckStock(){
-        assertEquals("pretzels", vendor.getStockListCount());
+        assertEquals(0, vendor.getStockListCount());
     }
 
     @Test
@@ -38,11 +38,7 @@ public class VendorTest {
 
     }
 
-    @Test
-    public void canGetStockList(){
-        vendor.addToStockList(pretzels);
-        assertEquals(pretzels, vendor.getVendorStock());
-    }
+
 
 
 }

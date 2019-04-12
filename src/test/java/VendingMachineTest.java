@@ -137,7 +137,7 @@ public class VendingMachineTest{
     }
 
     @Test
-    public void canSortChang(){
+    public void canSortChange(){
         vendingMachine.addCoinToVendingMachine(twentyPence);
         vendingMachine.addCoinToVendingMachine(twentyPence);
         vendingMachine.addCoinToVendingMachine(twentyPence);
@@ -174,7 +174,7 @@ public class VendingMachineTest{
         assertEquals(0.2, change.get(1).getValue(), 0.1);
         assertEquals(0.1, change.get(2).getValue(), 0.1);
     }
-
+//makes sure the sorted array never gets 5p because only returns higher value coins
 
 
 
